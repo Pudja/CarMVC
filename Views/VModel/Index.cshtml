@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Administration View for Models";
+}
+<br />
+<div class="container row p-0 m-0">
+    <div class="col-6">
+        <h2 class="text-info">Veichle List</h2>
+    </div>
+    <div class="col-3 offset-3">
+        <a asp-action="Upsert" asp-controller="VModel" class="btn btn-info form-control text-white">
+            Add new Model
+        </a>
+    </div>
+    <div class="col-12 border p-3">
+        <table id="" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Model Name</th>
+                    <th>Manufacturer</th>
+                </tr>
+            </thead>
+            @foreach (VModel item in Model.ModelItems)
+            {
+        <tr>
+            <td>@item.ModelName</td>
+            <td>@item.Make</td>
+        </tr>
+            }
+        </table>
+    </div>
+</div>
